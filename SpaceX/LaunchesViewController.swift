@@ -7,30 +7,28 @@
 //
 
 import UIKit
+import Alamofire
 
 class LaunchesViewController: UITableViewController {
-    let cellStates = (0 ... 20)
-        .map { "\($0)" }
-        .enumerated()
-        .map {
-            LaunchCellState(
-                missionName: $0.element,
-                missionTime: $0.element,
-                missionID: $0.element,
-                rocketName: $0.element,
-                hasReusedPieces: $0.offset % 2 == 0
-            )
-        }
+    private var launchDTOs: LaunchDTOS = []
     
     override func viewDidLoad() {
         tableView.register(LaunchCell.self, forCellReuseIdentifier: "temp")
+        
+        AF
+            .request("https://api.spacexdata.com/v3/launches/upcoming")
+            .responseDecodable(of: LaunchDTOS.self) { [weak self] in
+                self?.launchDTOs = $0.value ?? []
+                
+                self?.tableView.reloadSections([0], with: .top)
+            }
     }
     
     override func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return cellStates.count
+        return launchDTOs.count
     }
     
     override func tableView(
@@ -46,8 +44,22 @@ class LaunchesViewController: UITableViewController {
             return cell
         }
         
-        launchCell.prepare(with: cellStates[indexPath.item])
+        launchCell.prepare(
+            with: LaunchCellState(launchDTOs[indexPath.item])
+        )
         
         return launchCell
+    }
+}
+
+extension LaunchCellState {
+    init(_ launchDTO: LaunchDTO) {
+        self.init(
+            missionName: launchDTO.missionName,
+            missionTime: launchDTO.launchDateUTC,
+            missionID: launchDTO.missionID.joined(separator: ","),
+            rocketName: launchDTO.rocket.rocketName.rawValue,
+            hasReusedPieces: true
+        )
     }
 }

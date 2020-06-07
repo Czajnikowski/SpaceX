@@ -15,6 +15,7 @@
 		AE543BA8248D179000732BC8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE543BA7248D179000732BC8 /* SnapKit */; };
 		AE5876F1248D18C2000FEB56 /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5876F0248D18C2000FEB56 /* LaunchCell.swift */; };
 		AE5876F3248D1BCA000FEB56 /* LaunchDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5876F2248D1BCA000FEB56 /* LaunchDTOs.swift */; };
+		AE5876F6248D1C1A000FEB56 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AE5876F5248D1C1A000FEB56 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE543BA8248D179000732BC8 /* SnapKit in Frameworks */,
+				AE5876F6248D1C1A000FEB56 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +92,7 @@
 			name = SpaceX;
 			packageProductDependencies = (
 				AE543BA7248D179000732BC8 /* SnapKit */,
+				AE5876F5248D1C1A000FEB56 /* Alamofire */,
 			);
 			productName = SpaceX;
 			productReference = AE543B8D248D160300732BC8 /* SpaceX.app */;
@@ -121,6 +124,7 @@
 			mainGroup = AE543B84248D160300732BC8;
 			packageReferences = (
 				AE543BA6248D179000732BC8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				AE5876F4248D1C1A000FEB56 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = AE543B8E248D160300732BC8 /* Products */;
 			projectDirPath = "";
@@ -345,6 +349,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		AE5876F4248D1C1A000FEB56 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -352,6 +364,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AE543BA6248D179000732BC8 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		AE5876F5248D1C1A000FEB56 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE5876F4248D1C1A000FEB56 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -26,6 +26,10 @@ class LaunchesViewController: UITableViewController {
                 
                 self?.tableView.reloadSections([0], with: .top)
             }
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            self?.nextLaunchView.prepare(withSecondsLeft: Int.random(in: (0 ... 1000)))
+        }
     }
     
     override func tableView(

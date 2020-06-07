@@ -6,8 +6,9 @@
 //  Copyright © 2020 Maciek. All rights reserved.
 //
 
-import Foundation
 import Alamofire
+import Foundation
+import View
 
 class LaunchesPresenter {
     private var launchDTOs: LaunchDTOS = []

@@ -9,7 +9,13 @@
 import Alamofire
 import UIKit
 
-protocol LaunchesPresenterProtocol {
+public class LaunchesBuilder {
+    public static func buildViewController(presenter: LaunchesPresenterProtocol) -> UIViewController {
+        return LaunchesViewController(presenter: presenter)
+    }
+}
+
+public protocol LaunchesPresenterProtocol {
     var launcheCellStates: [LaunchCellState] { get }
     var secondsUntilNextLaunch: Int? { get }
     

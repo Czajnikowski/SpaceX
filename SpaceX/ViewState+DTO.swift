@@ -6,7 +6,7 @@
 //  Copyright © 2020 Maciek. All rights reserved.
 //
 
-import Foundation
+import View
 
 extension LaunchCellState {
     init(_ launchDTO: LaunchDTO) {

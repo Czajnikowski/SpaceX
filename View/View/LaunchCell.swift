@@ -9,12 +9,26 @@
 import SnapKit
 import UIKit
 
-struct LaunchCellState {
+public struct LaunchCellState {
     let missionName: String
     let missionTime: String
     let missionID: String
     let rocketName: String
     let hasReusedPieces: Bool
+    
+    public init(
+        missionName: String,
+        missionTime: String,
+        missionID: String,
+        rocketName: String,
+        hasReusedPieces: Bool
+    ) {
+        self.missionName = missionName
+        self.missionTime = missionTime
+        self.missionID = missionID
+        self.rocketName = rocketName
+        self.hasReusedPieces = hasReusedPieces
+    }
 }
 
 class LaunchCell: UITableViewCell {

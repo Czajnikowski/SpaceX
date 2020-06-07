@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import View
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -18,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     ) {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = LaunchesViewController(
+            window.rootViewController = LaunchesBuilder.buildViewController(
                 presenter: LaunchesPresenter()
             )
             self.window = window

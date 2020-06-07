@@ -12,6 +12,7 @@ import Alamofire
 class LaunchesViewController: UITableViewController {
     private let nextLaunchView = NextLaunchView()
     private var launchDTOs: LaunchDTOS = []
+    private var nextLaunchDTO: LaunchDTO?
     
     override func viewDidLoad() {
         tableView.register(LaunchCell.self, forCellReuseIdentifier: "temp")
@@ -27,9 +28,17 @@ class LaunchesViewController: UITableViewController {
                 self?.tableView.reloadSections([0], with: .top)
             }
         
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-            self?.nextLaunchView.prepare(withSecondsLeft: Int.random(in: (0 ... 1000)))
-        }
+        AF
+            .request("https://api.spacexdata.com/v3/launches/next")
+            .responseDecodable(of: LaunchDTO.self) { [weak self] in
+                self?.nextLaunchDTO = $0.value
+                
+                self?.updateCountdown()
+                
+                Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+                    self?.updateCountdown()
+                }
+            }
     }
     
     override func tableView(
@@ -57,6 +66,20 @@ class LaunchesViewController: UITableViewController {
         )
         
         return launchCell
+    }
+    
+    private func updateCountdown() {
+        guard let nextLaunchDTO = nextLaunchDTO else {
+            return
+        }
+        
+        nextLaunchView.prepare(
+            withSecondsLeft: Int(
+                Date(
+                    timeIntervalSince1970: TimeInterval(nextLaunchDTO.launchDateUnix)
+                ).timeIntervalSinceNow
+            )
+        )
     }
 }
 

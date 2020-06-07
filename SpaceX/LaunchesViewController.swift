@@ -10,7 +10,7 @@ import Alamofire
 import UIKit
 
 class LaunchesViewController: UITableViewController {
-    private let nextLaunchView = NextLaunchView()
+    private let nextLaunchView = NextLaunchView().forAutoLayout()
     private var launchDTOs: LaunchDTOS = []
     private var nextLaunchDTO: LaunchDTO?
     
@@ -86,18 +86,6 @@ class LaunchesViewController: UITableViewController {
                     timeIntervalSince1970: TimeInterval(nextLaunchDTO.launchDateUnix)
                 ).timeIntervalSinceNow
             )
-        )
-    }
-}
-
-extension LaunchCellState {
-    init(_ launchDTO: LaunchDTO) {
-        self.init(
-            missionName: launchDTO.missionName,
-            missionTime: launchDTO.launchDateUTC,
-            missionID: launchDTO.missionID.joined(separator: ","),
-            rocketName: launchDTO.rocket.rocketName.rawValue,
-            hasReusedPieces: launchDTO.hasReusedPieces
         )
     }
 }

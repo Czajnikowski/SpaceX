@@ -15,8 +15,6 @@ class NextLaunchView: UIView {
     init() {
         super.init(frame: .zero)
         
-        translatesAutoresizingMaskIntoConstraints = false
-        
         addSubview(countdownLabel)
         countdownLabel.snp.makeConstraints { make in
             make.edges.equalTo(self).inset(16)

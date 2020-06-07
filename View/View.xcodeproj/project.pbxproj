@@ -60,9 +60,7 @@
 		AE0E66BC248D5D2A0062CD7D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AE0E66C8248D5D6D0062CD7D /* LaunchCell.swift */,
-				AE0E66C6248D5D6D0062CD7D /* LaunchesViewController.swift */,
-				AE0E66CA248D5D6D0062CD7D /* NextLaunchView.swift */,
+				AE0E66D9248D5E940062CD7D /* Launches */,
 				AE0E66C7248D5D6D0062CD7D /* TypeNameIdentifierProviding.swift */,
 				AE0E66C5248D5D6D0062CD7D /* Collection+safe.swift */,
 				AE0E66C9248D5D6D0062CD7D /* UIView+autoLayout.swift */,
@@ -70,6 +68,16 @@
 				AE0E66BE248D5D2A0062CD7D /* Info.plist */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AE0E66D9248D5E940062CD7D /* Launches */ = {
+			isa = PBXGroup;
+			children = (
+				AE0E66C8248D5D6D0062CD7D /* LaunchCell.swift */,
+				AE0E66C6248D5D6D0062CD7D /* LaunchesViewController.swift */,
+				AE0E66CA248D5D6D0062CD7D /* NextLaunchView.swift */,
+			);
+			path = Launches;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -15,7 +15,10 @@ class LaunchesViewController: UITableViewController {
     private var nextLaunchDTO: LaunchDTO?
     
     override func viewDidLoad() {
-        tableView.register(LaunchCell.self, forCellReuseIdentifier: "temp")
+        tableView.register(
+            LaunchCell.self,
+            forCellReuseIdentifier: LaunchCell.identifier
+        )
         
         nextLaunchView.prepare()
         tableView.tableHeaderView = nextLaunchView
@@ -55,7 +58,7 @@ class LaunchesViewController: UITableViewController {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: "temp",
+            withIdentifier: LaunchCell.identifier,
             for: indexPath
         )
         

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,8 @@
 		AE543B95248D160300732BC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE543B94248D160300732BC8 /* ContentView.swift */; };
 		AE543B97248D160500732BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE543B96248D160500732BC8 /* Assets.xcassets */; };
 		AE543BA5248D16C500732BC8 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE543BA4248D16C500732BC8 /* LaunchesViewController.swift */; };
+		AE543BA8248D179000732BC8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE543BA7248D179000732BC8 /* SnapKit */; };
+		AE5876F1248D18C2000FEB56 /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5876F0248D18C2000FEB56 /* LaunchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		AE543B96248D160500732BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE543B9E248D160500732BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE543BA4248D16C500732BC8 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
+		AE5876F0248D18C2000FEB56 /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE543BA8248D179000732BC8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +64,7 @@
 				AE543B9E248D160500732BC8 /* Info.plist */,
 				AE543BA4248D16C500732BC8 /* LaunchesViewController.swift */,
 				AE543B92248D160300732BC8 /* SceneDelegate.swift */,
+				AE5876F0248D18C2000FEB56 /* LaunchCell.swift */,
 			);
 			path = SpaceX;
 			sourceTree = "<group>";
@@ -80,6 +85,9 @@
 			dependencies = (
 			);
 			name = SpaceX;
+			packageProductDependencies = (
+				AE543BA7248D179000732BC8 /* SnapKit */,
+			);
 			productName = SpaceX;
 			productReference = AE543B8D248D160300732BC8 /* SpaceX.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +116,9 @@
 				Base,
 			);
 			mainGroup = AE543B84248D160300732BC8;
+			packageReferences = (
+				AE543BA6248D179000732BC8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = AE543B8E248D160300732BC8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -136,6 +147,7 @@
 				AE543B91248D160300732BC8 /* AppDelegate.swift in Sources */,
 				AE543BA5248D16C500732BC8 /* LaunchesViewController.swift in Sources */,
 				AE543B93248D160300732BC8 /* SceneDelegate.swift in Sources */,
+				AE5876F1248D18C2000FEB56 /* LaunchCell.swift in Sources */,
 				AE543B95248D160300732BC8 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +331,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AE543BA6248D179000732BC8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AE543BA7248D179000732BC8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE543BA6248D179000732BC8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AE543B85248D160300732BC8 /* Project object */;
 }

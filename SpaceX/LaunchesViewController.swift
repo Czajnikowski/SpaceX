@@ -6,8 +6,8 @@
 //  Copyright © 2020 Maciek. All rights reserved.
 //
 
-import UIKit
 import Alamofire
+import UIKit
 
 class LaunchesViewController: UITableViewController {
     private let nextLaunchView = NextLaunchView()

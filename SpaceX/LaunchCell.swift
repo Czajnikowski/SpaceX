@@ -6,8 +6,8 @@
 //  Copyright © 2020 Maciek. All rights reserved.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 struct LaunchCellState {
     let missionName: String

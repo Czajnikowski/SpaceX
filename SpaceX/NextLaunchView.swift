@@ -6,8 +6,8 @@
 //  Copyright © 2020 Maciek. All rights reserved.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 class NextLaunchView: UIView {
     private let countdownLabel = UILabel()

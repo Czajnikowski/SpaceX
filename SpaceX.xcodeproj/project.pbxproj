@@ -14,6 +14,7 @@
 		AE543BA5248D16C500732BC8 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE543BA4248D16C500732BC8 /* LaunchesViewController.swift */; };
 		AE543BA8248D179000732BC8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE543BA7248D179000732BC8 /* SnapKit */; };
 		AE5876F1248D18C2000FEB56 /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5876F0248D18C2000FEB56 /* LaunchCell.swift */; };
+		AE5876F3248D1BCA000FEB56 /* LaunchDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5876F2248D1BCA000FEB56 /* LaunchDTOs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		AE543B9E248D160500732BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE543BA4248D16C500732BC8 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		AE5876F0248D18C2000FEB56 /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
+		AE5876F2248D1BCA000FEB56 /* LaunchDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDTOs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				AE543BA4248D16C500732BC8 /* LaunchesViewController.swift */,
 				AE543B92248D160300732BC8 /* SceneDelegate.swift */,
 				AE5876F0248D18C2000FEB56 /* LaunchCell.swift */,
+				AE5876F2248D1BCA000FEB56 /* LaunchDTOs.swift */,
 			);
 			path = SpaceX;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			files = (
 				AE543B91248D160300732BC8 /* AppDelegate.swift in Sources */,
 				AE543BA5248D16C500732BC8 /* LaunchesViewController.swift in Sources */,
+				AE5876F3248D1BCA000FEB56 /* LaunchDTOs.swift in Sources */,
 				AE543B93248D160300732BC8 /* SceneDelegate.swift in Sources */,
 				AE5876F1248D18C2000FEB56 /* LaunchCell.swift in Sources */,
 				AE543B95248D160300732BC8 /* ContentView.swift in Sources */,

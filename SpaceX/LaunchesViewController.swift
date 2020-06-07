@@ -35,9 +35,11 @@ class LaunchesViewController: UITableViewController {
                 
                 self?.updateCountdown()
                 
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+                let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
                     self?.updateCountdown()
                 }
+                
+                RunLoop.main.add(timer, forMode: .common)
             }
     }
     

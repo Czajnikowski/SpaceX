@@ -9,10 +9,28 @@
 import Alamofire
 import UIKit
 
+protocol LaunchesPresenterProtocol {
+    var launcheCellStates: [LaunchCellState] { get }
+    var secondsUntilNextLaunch: Int? { get }
+    
+    func loadLaunches(_ completionHandler: @escaping () -> Void)
+    func loadNextLaunch(_ completionHandler: @escaping () -> Void)
+}
+
 class LaunchesViewController: UITableViewController {
+    private let presenter: LaunchesPresenterProtocol
+    
     private let nextLaunchView = NextLaunchView().forAutoLayout()
-    private var launchDTOs: LaunchDTOS = []
-    private var nextLaunchDTO: LaunchDTO?
+    
+    init(presenter: LaunchesPresenterProtocol) {
+        self.presenter = presenter
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         tableView.register(
@@ -23,34 +41,26 @@ class LaunchesViewController: UITableViewController {
         nextLaunchView.prepare()
         tableView.tableHeaderView = nextLaunchView
         
-        AF
-            .request("https://api.spacexdata.com/v3/launches/upcoming")
-            .responseDecodable(of: LaunchDTOS.self) { [weak self] in
-                self?.launchDTOs = $0.value ?? []
-                
-                self?.tableView.reloadSections([0], with: .top)
-            }
+        presenter.loadLaunches { [weak self] in
+            self?.tableView.reloadSections([0], with: .top)
+        }
         
-        AF
-            .request("https://api.spacexdata.com/v3/launches/next")
-            .responseDecodable(of: LaunchDTO.self) { [weak self] in
-                self?.nextLaunchDTO = $0.value
-                
+        presenter.loadNextLaunch { [weak self] in
+            self?.updateCountdown()
+            
+            let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
                 self?.updateCountdown()
-                
-                let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-                    self?.updateCountdown()
-                }
-                
-                RunLoop.main.add(timer, forMode: .common)
             }
+            
+            RunLoop.main.add(timer, forMode: .common)
+        }
     }
     
     override func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return launchDTOs.count
+        return presenter.launcheCellStates.count
     }
     
     override func tableView(
@@ -66,26 +76,12 @@ class LaunchesViewController: UITableViewController {
             return cell
         }
         
-        launchDTOs[safe: indexPath.item].map {
-            launchCell.prepare(
-                with: LaunchCellState($0)
-            )
-        }
+        presenter.launcheCellStates[safe: indexPath.item].map(launchCell.prepare)
         
         return launchCell
     }
     
     private func updateCountdown() {
-        guard let nextLaunchDTO = nextLaunchDTO else {
-            return
-        }
-        
-        nextLaunchView.prepare(
-            withSecondsLeft: Int(
-                Date(
-                    timeIntervalSince1970: TimeInterval(nextLaunchDTO.launchDateUnix)
-                ).timeIntervalSinceNow
-            )
-        )
+        nextLaunchView.prepare(withSecondsLeft: presenter.secondsUntilNextLaunch)
     }
 }

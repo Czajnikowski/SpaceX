@@ -45,6 +45,9 @@ class LaunchesViewController: UITableViewController {
         )
         
         nextLaunchView.prepare()
+        nextLaunchView.setNeedsLayout()
+        nextLaunchView.layoutIfNeeded()
+        
         tableView.tableHeaderView = nextLaunchView
         
         presenter.loadLaunches { [weak self] in

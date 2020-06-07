@@ -66,9 +66,11 @@ class LaunchesViewController: UITableViewController {
             return cell
         }
         
-        launchCell.prepare(
-            with: LaunchCellState(launchDTOs[indexPath.item])
-        )
+        launchDTOs[safe: indexPath.item].map {
+            launchCell.prepare(
+                with: LaunchCellState($0)
+            )
+        }
         
         return launchCell
     }

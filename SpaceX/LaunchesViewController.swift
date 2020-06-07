@@ -10,10 +10,14 @@ import UIKit
 import Alamofire
 
 class LaunchesViewController: UITableViewController {
+    private let nextLaunchView = NextLaunchView()
     private var launchDTOs: LaunchDTOS = []
     
     override func viewDidLoad() {
         tableView.register(LaunchCell.self, forCellReuseIdentifier: "temp")
+        
+        nextLaunchView.prepare()
+        tableView.tableHeaderView = nextLaunchView
         
         AF
             .request("https://api.spacexdata.com/v3/launches/upcoming")

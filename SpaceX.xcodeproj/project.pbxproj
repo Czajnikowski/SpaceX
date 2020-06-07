@@ -16,6 +16,7 @@
 		AE5876F1248D18C2000FEB56 /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5876F0248D18C2000FEB56 /* LaunchCell.swift */; };
 		AE5876F3248D1BCA000FEB56 /* LaunchDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5876F2248D1BCA000FEB56 /* LaunchDTOs.swift */; };
 		AE5876F6248D1C1A000FEB56 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AE5876F5248D1C1A000FEB56 /* Alamofire */; };
+		AE5876F8248D1F46000FEB56 /* NextLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5876F7248D1F46000FEB56 /* NextLaunchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AE543BA4248D16C500732BC8 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		AE5876F0248D18C2000FEB56 /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 		AE5876F2248D1BCA000FEB56 /* LaunchDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDTOs.swift; sourceTree = "<group>"; };
+		AE5876F7248D1F46000FEB56 /* NextLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +68,11 @@
 				AE543B96248D160500732BC8 /* Assets.xcassets */,
 				AE543B94248D160300732BC8 /* ContentView.swift */,
 				AE543B9E248D160500732BC8 /* Info.plist */,
-				AE543BA4248D16C500732BC8 /* LaunchesViewController.swift */,
-				AE543B92248D160300732BC8 /* SceneDelegate.swift */,
 				AE5876F0248D18C2000FEB56 /* LaunchCell.swift */,
 				AE5876F2248D1BCA000FEB56 /* LaunchDTOs.swift */,
+				AE543BA4248D16C500732BC8 /* LaunchesViewController.swift */,
+				AE5876F7248D1F46000FEB56 /* NextLaunchView.swift */,
+				AE543B92248D160300732BC8 /* SceneDelegate.swift */,
 			);
 			path = SpaceX;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE543B91248D160300732BC8 /* AppDelegate.swift in Sources */,
+				AE5876F8248D1F46000FEB56 /* NextLaunchView.swift in Sources */,
 				AE543BA5248D16C500732BC8 /* LaunchesViewController.swift in Sources */,
 				AE5876F3248D1BCA000FEB56 /* LaunchDTOs.swift in Sources */,
 				AE543B93248D160300732BC8 /* SceneDelegate.swift in Sources */,

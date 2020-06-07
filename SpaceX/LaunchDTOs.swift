@@ -12,8 +12,7 @@ struct LaunchDTO: Codable {
     let missionID: [String]
     let launchYear: String
     let launchDateUnix: Int
-    let launchDateUTC: String
-    let launchDateLocal: Date
+    let launchDateUTC, launchDateLocal: String
     let isTentative: Bool
     let tentativeMaxPrecision: String
     let tbd: Bool

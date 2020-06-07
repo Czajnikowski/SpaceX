@@ -92,7 +92,29 @@ extension LaunchCellState {
             missionTime: launchDTO.launchDateUTC,
             missionID: launchDTO.missionID.joined(separator: ","),
             rocketName: launchDTO.rocket.rocketName.rawValue,
-            hasReusedPieces: true
+            hasReusedPieces: launchDTO.reusedStatusProviders.contains { $0.isReused }
         )
+    }
+}
+
+extension LaunchDTO {
+    var reusedStatusProviders: [ReusedStatusProviding] {
+        return rocket.firstStage.cores + rocket.secondStage.payloads
+    }
+}
+
+protocol ReusedStatusProviding {
+    var isReused: Bool { get }
+}
+
+extension Core: ReusedStatusProviding {
+    var isReused: Bool {
+        return reused ?? false
+    }
+}
+
+extension Payload: ReusedStatusProviding {
+    var isReused: Bool {
+        return reused
     }
 }

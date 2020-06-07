@@ -27,6 +27,7 @@
 		AE0E66C8248D5D6D0062CD7D /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 		AE0E66C9248D5D6D0062CD7D /* UIView+autoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+autoLayout.swift"; sourceTree = "<group>"; };
 		AE0E66CA248D5D6D0062CD7D /* NextLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchView.swift; sourceTree = "<group>"; };
+		AE0E66DB248D5EFD0062CD7D /* Launches.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Launches.playground; path = ../../../Launches.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +74,7 @@
 		AE0E66D9248D5E940062CD7D /* Launches */ = {
 			isa = PBXGroup;
 			children = (
+				AE0E66DB248D5EFD0062CD7D /* Launches.playground */,
 				AE0E66C8248D5D6D0062CD7D /* LaunchCell.swift */,
 				AE0E66C6248D5D6D0062CD7D /* LaunchesViewController.swift */,
 				AE0E66CA248D5D6D0062CD7D /* NextLaunchView.swift */,

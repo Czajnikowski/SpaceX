@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+@discardableResult func with<A>(_ a: A, _ f: (A) -> Void) -> A {
+    f(a)
+    return a
+}

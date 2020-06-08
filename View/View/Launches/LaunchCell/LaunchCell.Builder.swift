@@ -7,37 +7,43 @@
 //
 
 import UIKit
+import SnapKit
 
 extension LaunchCell {
     class Builder {
         static func buildMissionNameLabel() -> UILabel {
-            let label = UILabel().forAutoLayout()
-            
-            return label
+            return with(UILabel().forAutoLayout()) {
+                $0.font = .preferredFont(forTextStyle: .largeTitle)
+                $0.snp.contentHuggingHorizontalPriority = .infinity
+            }
         }
         
         static func buildMissionTimeLabel() -> UILabel {
-            let label = UILabel().forAutoLayout()
-            
-            return label
+            return with(UILabel().forAutoLayout()) {
+                $0.font = .preferredFont(forTextStyle: .caption1)
+                $0.textColor = .lightGray
+            }
         }
         
         static func buildMissionIDLabel() -> UILabel {
-            let label = UILabel().forAutoLayout()
-            
-            return label
+            return with(UILabel().forAutoLayout()) {
+                $0.font = .preferredFont(forTextStyle: .title2)
+                $0.textColor = .gray
+            }
         }
         
         static func buildRocketNameLabel() -> UILabel {
-            let label = UILabel().forAutoLayout()
-            
-            return label
+            return with(UILabel().forAutoLayout()) {
+                $0.font = .preferredFont(forTextStyle: .footnote)
+                $0.snp.contentHuggingHorizontalPriority = .infinity
+            }
         }
         
         static func buildHasReusedPiecesLabel() -> UILabel {
-            let label = UILabel().forAutoLayout()
-            
-            return label
+            return with(UILabel().forAutoLayout()) {
+                $0.font = .preferredFont(forTextStyle: .footnote)
+                $0.textColor = .red
+            }
         }
         
         static func buildRootStackView(
@@ -46,19 +52,43 @@ extension LaunchCell {
             missionIDLabel: UILabel,
             rocketNameLabel: UILabel,
             hasReusedPiecesLabel: UILabel
-        ) {
-            let rootStackView = UIStackView(
+        ) -> UIView {
+            let missionInfoStackView = UIStackView(
                 arrangedSubviews: [
                     missionNameLabel,
-                    missionTimeLabel,
-                    missionIDLabel,
+                    missionIDLabel
+                ]
+            ).forAutoLayout()
+            
+            with(missionInfoStackView) {
+                $0.alignment = .firstBaseline
+                $0.spacing = 8
+            }
+            
+            let rocketInfoStackView = UIStackView(
+                arrangedSubviews: [
                     rocketNameLabel,
                     hasReusedPiecesLabel
                 ]
-            )
-            rootStackView.axis = .vertical
+            ).forAutoLayout()
             
-            return rootStackView
+            with(rocketInfoStackView) {
+                $0.alignment = .firstBaseline
+                $0.spacing = 8
+            }
+            
+            let rootStackView = UIStackView(
+                arrangedSubviews: [
+                    missionInfoStackView,
+                    missionTimeLabel,
+                    rocketInfoStackView
+                ]
+            )
+            
+            return with(rootStackView) {
+                $0.axis = .vertical
+                $0.spacing = 6
+            }
         }
     }
 }

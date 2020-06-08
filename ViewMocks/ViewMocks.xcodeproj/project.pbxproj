@@ -12,6 +12,23 @@
 		AE4932BD248E07AE0010020F /* ViewBuilders+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4932BC248E07AE0010020F /* ViewBuilders+Mock.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AEFB280A248E1236009C4A73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEFB2806248E1236009C4A73 /* View.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE0E66BA248D5D2A0062CD7D;
+			remoteInfo = View;
+		};
+		AEFB280C248E1239009C4A73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEFB2806248E1236009C4A73 /* View.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AE0E66B9248D5D2A0062CD7D;
+			remoteInfo = View;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		AE4932AC248E073E0010020F /* ViewMocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewMocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4932AF248E073E0010020F /* ViewMocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewMocks.h; sourceTree = "<group>"; };
@@ -19,6 +36,7 @@
 		AE4932B9248E077E0010020F /* Launches.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Launches.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AE4932BA248E079A0010020F /* LaunchesPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesPresenterMock.swift; sourceTree = "<group>"; };
 		AE4932BC248E07AE0010020F /* ViewBuilders+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewBuilders+Mock.swift"; sourceTree = "<group>"; };
+		AEFB2806248E1236009C4A73 /* View.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = View.xcodeproj; path = ../View/View.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +53,7 @@
 		AE4932A2248E073E0010020F = {
 			isa = PBXGroup;
 			children = (
+				AEFB2806248E1236009C4A73 /* View.xcodeproj */,
 				AE4932AE248E073E0010020F /* ViewMocks */,
 				AE4932AD248E073E0010020F /* Products */,
 			);
@@ -68,6 +87,14 @@
 			path = Launches;
 			sourceTree = "<group>";
 		};
+		AEFB2807248E1236009C4A73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEFB280B248E1236009C4A73 /* View.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -94,6 +121,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AEFB280D248E1239009C4A73 /* PBXTargetDependency */,
 			);
 			name = ViewMocks;
 			productName = ViewMocks;
@@ -126,12 +154,28 @@
 			mainGroup = AE4932A2248E073E0010020F;
 			productRefGroup = AE4932AD248E073E0010020F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AEFB2807248E1236009C4A73 /* Products */;
+					ProjectRef = AEFB2806248E1236009C4A73 /* View.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AE4932AB248E073E0010020F /* ViewMocks */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AEFB280B248E1236009C4A73 /* View.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = View.framework;
+			remoteRef = AEFB280A248E1236009C4A73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AE4932AA248E073E0010020F /* Resources */ = {
@@ -154,6 +198,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AEFB280D248E1239009C4A73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = View;
+			targetProxy = AEFB280C248E1239009C4A73 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AE4932B2248E073E0010020F /* Debug */ = {

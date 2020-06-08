@@ -1,4 +1,11 @@
-import PlaygroundSupport
+//
+//  LaunchesPresenterMock.swift
+//  ViewMocks
+//
+//  Created by Maciek on 08/06/2020.
+//  Copyright © 2020 Maciek. All rights reserved.
+//
+
 import View
 
 class LaunchesPresenterMock: LaunchesPresenterProtocol {
@@ -25,8 +32,3 @@ class LaunchesPresenterMock: LaunchesPresenterProtocol {
         completionHandler()
     }
 }
-
-
-PlaygroundPage.current.liveView = LaunchesBuilder.buildViewController(
-    presenter: LaunchesPresenterMock()
-)

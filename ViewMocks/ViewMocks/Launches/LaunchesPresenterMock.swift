@@ -17,6 +17,13 @@ class LaunchesPresenterMock: LaunchesPresenterProtocol {
             missionID: "MissionID",
             rocketName: "Some rocket name",
             hasReusedPieces: true
+        ),
+        LaunchCellState(
+            missionName: "Some super, super long mission",
+            missionTime: "Some UTC time",
+            missionID: "MissionID",
+            rocketName: "Some looong, loong rocket name",
+            hasReusedPieces: true
         )
     ]
     

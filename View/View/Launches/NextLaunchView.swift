@@ -26,6 +26,6 @@ class NextLaunchView: UIView {
     }
     
     func prepare(withSecondsLeft secondsLeft: Int? = nil) {
-        countdownLabel.text = secondsLeft.map { "Only \($0)s left!" } ?? "Next launch soon!"
+        countdownLabel.text = secondsLeft.map { "Only \($0)s left until the next launch!" } ?? "Next launch soon!"
     }
 }

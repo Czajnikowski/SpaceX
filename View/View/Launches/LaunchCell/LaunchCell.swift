@@ -63,9 +63,9 @@ class LaunchCell: UITableViewCell {
     
     func prepare(with state: LaunchCellState) {
         missionNameLabel.text = state.missionName
-        missionTimeLabel.text = state.missionTime
+        missionTimeLabel.text = "Starts at (UTC): \(state.missionTime)"
         missionIDLabel.text = state.missionID
         rocketNameLabel.text = state.rocketName
-        hasReusedPiecesLabel.text = "\(state.hasReusedPieces)"
+        hasReusedPiecesLabel.text = "\(state.hasReusedPieces ? "(Has reused pieces)" : "")"
     }
 }

@@ -10,7 +10,9 @@ import SnapKit
 import UIKit
 
 class NextLaunchView: UIView {
-    private let countdownLabel = UILabel()
+    private let countdownLabel = with(UILabel()) {
+        $0.font = .preferredFont(forTextStyle: .title3)
+    }
     
     init() {
         super.init(frame: .zero)

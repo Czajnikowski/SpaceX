@@ -2,6 +2,10 @@
 
 [Coding challeng for Mav Farm](https://github.com/mavfarm/coding-challenges/blob/master/iOS/Mav_Farm_iOS_Coding_Challenge.pdf).
 
+## How to use?
+
+Use `SpaceX.xcworkspace` to open the project, wait for SMP to resolve packages and you're ready to go.
+
 ## How did I do?
 
 It was a pretty challenging task in fact as we agreed that it should take no more than 2-3 hrs. To use my time to the fullest I divided it into three ~1 h sprints:

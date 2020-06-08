@@ -18,7 +18,9 @@ class AppCoordinator {
     
     func start() {
         window.rootViewController = LaunchesBuilder.buildViewController(
-            presenter: LaunchesPresenter()
+            presenter: LaunchesPresenter(
+                decodedValueProvider: AlamofireProvider()
+            )
         )
         window.makeKeyAndVisible()
     }

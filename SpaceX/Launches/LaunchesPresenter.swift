@@ -6,13 +6,25 @@
 //  Copyright © 2020 Maciek. All rights reserved.
 //
 
-import Alamofire
-import Foundation
 import View
 
+protocol DecodedValueProviding {
+    func provide<Value>(
+        _ valueType: Value.Type,
+        forPath path: String,
+        _ handleCompletion: @escaping (Value?) -> Void
+    ) where Value: Decodable
+}
+
 class LaunchesPresenter {
+    private let decodedValueProvider: DecodedValueProviding
+    
     private var launchDTOs: LaunchDTOS = []
     private var nextLaunchDTO: LaunchDTO?
+    
+    init(decodedValueProvider: DecodedValueProviding) {
+        self.decodedValueProvider = decodedValueProvider
+    }
 }
 
 extension LaunchesPresenter: LaunchesPresenterProtocol {
@@ -33,20 +45,22 @@ extension LaunchesPresenter: LaunchesPresenterProtocol {
     }
     
     func loadLaunches(_ completionHandler: @escaping () -> Void) {
-        AF
-            .request("https://api.spacexdata.com/v3/launches/upcoming")
-            .responseDecodable(of: LaunchDTOS.self) { [weak self] in
-                self?.launchDTOs = $0.value ?? []
-                
-                completionHandler()
-            }
+        decodedValueProvider.provide(
+            LaunchDTOS.self,
+            forPath: "launches/upcoming"
+        ) { [weak self] in
+            self?.launchDTOs = $0 ?? []
+            
+            completionHandler()
+        }
     }
     
     func loadNextLaunch(_ completionHandler: @escaping () -> Void) {
-        AF
-            .request("https://api.spacexdata.com/v3/launches/next")
-            .responseDecodable(of: LaunchDTO.self) { [weak self] in
-                self?.nextLaunchDTO = $0.value
+        decodedValueProvider.provide(
+            LaunchDTO.self,
+            forPath: "launches/next"
+        ) { [weak self] in
+                self?.nextLaunchDTO = $0
                 
                 completionHandler()
             }

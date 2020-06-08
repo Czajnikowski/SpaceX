@@ -10,7 +10,7 @@ import UIKit
 import View
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    var window: UIWindow?
+    private var appCoordinator: AppCoordinator?
     
     func scene(
         _ scene: UIScene,
@@ -18,12 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         if let windowScene = scene as? UIWindowScene {
-            let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = LaunchesBuilder.buildViewController(
-                presenter: LaunchesPresenter()
-            )
-            self.window = window
-            window.makeKeyAndVisible()
+            appCoordinator = AppCoordinator(UIWindow(windowScene: windowScene))
+            appCoordinator?.start()
         }
     }
 }

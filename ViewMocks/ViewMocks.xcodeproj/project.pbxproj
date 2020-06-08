@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		AE4932B1248E073E0010020F /* ViewMocks.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4932AF248E073E0010020F /* ViewMocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE4932BB248E079A0010020F /* LaunchesPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4932BA248E079A0010020F /* LaunchesPresenterMock.swift */; };
 		AE4932BD248E07AE0010020F /* ViewBuilders+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4932BC248E07AE0010020F /* ViewBuilders+Mock.swift */; };
+		AEFB2815248E13A3009C4A73 /* LaunchesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFB2814248E13A3009C4A73 /* LaunchesTests.swift */; };
+		AEFB2817248E13A3009C4A73 /* ViewMocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4932AC248E073E0010020F /* ViewMocks.framework */; };
+		AEFB281F248E13D7009C4A73 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = AEFB281E248E13D7009C4A73 /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,13 @@
 			remoteGlobalIDString = AE0E66B9248D5D2A0062CD7D;
 			remoteInfo = View;
 		};
+		AEFB2818248E13A3009C4A73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE4932A3248E073E0010020F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE4932AB248E073E0010020F;
+			remoteInfo = ViewMocks;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +47,9 @@
 		AE4932BA248E079A0010020F /* LaunchesPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesPresenterMock.swift; sourceTree = "<group>"; };
 		AE4932BC248E07AE0010020F /* ViewBuilders+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewBuilders+Mock.swift"; sourceTree = "<group>"; };
 		AEFB2806248E1236009C4A73 /* View.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = View.xcodeproj; path = ../View/View.xcodeproj; sourceTree = "<group>"; };
+		AEFB2812248E13A3009C4A73 /* ViewMocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewMocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEFB2814248E13A3009C4A73 /* LaunchesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesTests.swift; sourceTree = "<group>"; };
+		AEFB2816248E13A3009C4A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +57,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEFB280F248E13A3009C4A73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEFB2817248E13A3009C4A73 /* ViewMocks.framework in Frameworks */,
+				AEFB281F248E13D7009C4A73 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +77,7 @@
 			children = (
 				AEFB2806248E1236009C4A73 /* View.xcodeproj */,
 				AE4932AE248E073E0010020F /* ViewMocks */,
+				AEFB2813248E13A3009C4A73 /* ViewMocksTests */,
 				AE4932AD248E073E0010020F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				AE4932AC248E073E0010020F /* ViewMocks.framework */,
+				AEFB2812248E13A3009C4A73 /* ViewMocksTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +117,15 @@
 				AEFB280B248E1236009C4A73 /* View.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AEFB2813248E13A3009C4A73 /* ViewMocksTests */ = {
+			isa = PBXGroup;
+			children = (
+				AEFB2814248E13A3009C4A73 /* LaunchesTests.swift */,
+				AEFB2816248E13A3009C4A73 /* Info.plist */,
+			);
+			path = ViewMocksTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,18 +161,43 @@
 			productReference = AE4932AC248E073E0010020F /* ViewMocks.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		AEFB2811248E13A3009C4A73 /* ViewMocksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEFB281A248E13A3009C4A73 /* Build configuration list for PBXNativeTarget "ViewMocksTests" */;
+			buildPhases = (
+				AEFB280E248E13A3009C4A73 /* Sources */,
+				AEFB280F248E13A3009C4A73 /* Frameworks */,
+				AEFB2810248E13A3009C4A73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEFB2819248E13A3009C4A73 /* PBXTargetDependency */,
+			);
+			name = ViewMocksTests;
+			packageProductDependencies = (
+				AEFB281E248E13D7009C4A73 /* SnapshotTesting */,
+			);
+			productName = ViewMocksTests;
+			productReference = AEFB2812248E13A3009C4A73 /* ViewMocksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AE4932A3248E073E0010020F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = Maciek;
 				TargetAttributes = {
 					AE4932AB248E073E0010020F = {
 						CreatedOnToolsVersion = 11.5;
 						LastSwiftMigration = 1150;
+					};
+					AEFB2811248E13A3009C4A73 = {
+						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
@@ -152,6 +210,9 @@
 				Base,
 			);
 			mainGroup = AE4932A2248E073E0010020F;
+			packageReferences = (
+				AEFB281D248E13D7009C4A73 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = AE4932AD248E073E0010020F /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -163,6 +224,7 @@
 			projectRoot = "";
 			targets = (
 				AE4932AB248E073E0010020F /* ViewMocks */,
+				AEFB2811248E13A3009C4A73 /* ViewMocksTests */,
 			);
 		};
 /* End PBXProject section */
@@ -185,6 +247,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AEFB2810248E13A3009C4A73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -197,6 +266,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AEFB280E248E13A3009C4A73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEFB2815248E13A3009C4A73 /* LaunchesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -204,6 +281,11 @@
 			isa = PBXTargetDependency;
 			name = View;
 			targetProxy = AEFB280C248E1239009C4A73 /* PBXContainerItemProxy */;
+		};
+		AEFB2819248E13A3009C4A73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE4932AB248E073E0010020F /* ViewMocks */;
+			targetProxy = AEFB2818248E13A3009C4A73 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -379,6 +461,42 @@
 			};
 			name = Release;
 		};
+		AEFB281B248E13A3009C4A73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QPFFKMSR5R;
+				INFOPLIST_FILE = ViewMocksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mczarnik.ViewMocksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AEFB281C248E13A3009C4A73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QPFFKMSR5R;
+				INFOPLIST_FILE = ViewMocksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mczarnik.ViewMocksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -400,7 +518,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		AEFB281A248E13A3009C4A73 /* Build configuration list for PBXNativeTarget "ViewMocksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEFB281B248E13A3009C4A73 /* Debug */,
+				AEFB281C248E13A3009C4A73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AEFB281D248E13D7009C4A73 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AEFB281E248E13D7009C4A73 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEFB281D248E13D7009C4A73 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AE4932A3248E073E0010020F /* Project object */;
 }

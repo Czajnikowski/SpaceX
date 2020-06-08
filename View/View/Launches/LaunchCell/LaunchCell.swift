@@ -32,27 +32,24 @@ public struct LaunchCellState {
 }
 
 class LaunchCell: UITableViewCell {
-    private let missionNameLabel = UILabel()
-    private let missionTimeLabel = UILabel()
-    private let missionIDLabel = UILabel()
-    private let rocketNameLabel = UILabel()
-    private let hasReusedPiecesLabel = UILabel()
+    private let missionNameLabel = Builder.buildMissionNameLabel()
+    private let missionTimeLabel = Builder.buildMissionTimeLabel()
+    private let missionIDLabel = Builder.buildMissionIDLabel()
+    private let rocketNameLabel = Builder.buildRocketNameLabel()
+    private let hasReusedPiecesLabel = Builder.buildHasReusedPiecesLabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectionStyle = .none
         
-        let rootStackView = UIStackView(
-            arrangedSubviews: [
-                missionNameLabel,
-                missionTimeLabel,
-                missionIDLabel,
-                rocketNameLabel,
-                hasReusedPiecesLabel
-            ]
+        let rootStackView = Builder.buildRootStackView(
+            missionNameLabel: missionNameLabel,
+            missionTimeLabel: missionTimeLabel,
+            missionIDLabel: missionIDLabel,
+            rocketNameLabel: rocketNameLabel,
+            hasReusedPiecesLabel: hasReusedPiecesLabel
         )
-        rootStackView.axis = .vertical
         
         addSubview(rootStackView)
         rootStackView.snp.makeConstraints { make in

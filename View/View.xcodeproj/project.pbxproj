@@ -15,6 +15,7 @@
 		AE0E66CF248D5D6D0062CD7D /* UIView+autoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0E66C9248D5D6D0062CD7D /* UIView+autoLayout.swift */; };
 		AE0E66D0248D5D6D0062CD7D /* NextLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0E66CA248D5D6D0062CD7D /* NextLaunchView.swift */; };
 		AE0E66D3248D5DA10062CD7D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE0E66D2248D5DA10062CD7D /* SnapKit */; };
+		AE4932C0248E08AE0010020F /* LaunchCell.Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4932BF248E08AE0010020F /* LaunchCell.Builder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		AE0E66C8248D5D6D0062CD7D /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 		AE0E66C9248D5D6D0062CD7D /* UIView+autoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+autoLayout.swift"; sourceTree = "<group>"; };
 		AE0E66CA248D5D6D0062CD7D /* NextLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLaunchView.swift; sourceTree = "<group>"; };
+		AE4932BF248E08AE0010020F /* LaunchCell.Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.Builder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +62,12 @@
 		AE0E66BC248D5D2A0062CD7D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AE0E66C5248D5D6D0062CD7D /* Collection+safe.swift */,
+				AE0E66BE248D5D2A0062CD7D /* Info.plist */,
 				AE0E66D9248D5E940062CD7D /* Launches */,
 				AE0E66C7248D5D6D0062CD7D /* TypeNameIdentifierProviding.swift */,
-				AE0E66C5248D5D6D0062CD7D /* Collection+safe.swift */,
 				AE0E66C9248D5D6D0062CD7D /* UIView+autoLayout.swift */,
 				AE0E66BD248D5D2A0062CD7D /* View.h */,
-				AE0E66BE248D5D2A0062CD7D /* Info.plist */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -73,11 +75,20 @@
 		AE0E66D9248D5E940062CD7D /* Launches */ = {
 			isa = PBXGroup;
 			children = (
-				AE0E66C8248D5D6D0062CD7D /* LaunchCell.swift */,
+				AE4932BE248E08960010020F /* LaunchCell */,
 				AE0E66C6248D5D6D0062CD7D /* LaunchesViewController.swift */,
 				AE0E66CA248D5D6D0062CD7D /* NextLaunchView.swift */,
 			);
 			path = Launches;
+			sourceTree = "<group>";
+		};
+		AE4932BE248E08960010020F /* LaunchCell */ = {
+			isa = PBXGroup;
+			children = (
+				AE0E66C8248D5D6D0062CD7D /* LaunchCell.swift */,
+				AE4932BF248E08AE0010020F /* LaunchCell.Builder.swift */,
+			);
+			path = LaunchCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +178,7 @@
 			files = (
 				AE0E66CC248D5D6D0062CD7D /* Collection+safe.swift in Sources */,
 				AE0E66CE248D5D6D0062CD7D /* LaunchesViewController.swift in Sources */,
+				AE4932C0248E08AE0010020F /* LaunchCell.Builder.swift in Sources */,
 				AE0E66CB248D5D6D0062CD7D /* TypeNameIdentifierProviding.swift in Sources */,
 				AE0E66CF248D5D6D0062CD7D /* UIView+autoLayout.swift in Sources */,
 				AE0E66D0248D5D6D0062CD7D /* NextLaunchView.swift in Sources */,

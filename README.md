@@ -14,7 +14,7 @@ It was a pretty challenging task in fact as we agreed that it should take no mor
 2. Improving underlying code abstractions
 3. UI related polishes
 
-I have implemented core functionalities with the help of `SnapKit` and `Alamofire` and used Swift Package Manager as a dependency management tool.
+I have implemented core functionalities with the help of `SnapKit` and `Alamofire` (as recommended for the challenge) and used Swift Package Manager as a dependency management tool.
 
 To save time I used [quicktype](https://quicktype.io/) to generate DTO structs.
 I didn't spend too much time (~25 mins) polishing and designing fancy animations, but instead I focused on developing facilities that make UI development fast and robust (check `Launches.playground` and `ViewMocksTests` scheme). I also invested in decoupling of the `View`, `ViewMocks`, and a service-layer abstraction decoupled at the main target level via `DecodedValueProviding`.

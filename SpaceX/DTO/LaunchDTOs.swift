@@ -16,16 +16,11 @@ struct LaunchDTO: Codable {
     let isTentative: Bool
     let tentativeMaxPrecision: String
     let tbd: Bool
-    let launchWindow: JSONNull?
     let rocket: Rocket
     let ships: [JSONAny]
-    let telemetry: Telemetry
-    let launchSite: LaunchSite
-    let launchSuccess: JSONNull?
     let links: Links
     let details: String?
     let upcoming: Bool
-    let staticFireDateUTC, staticFireDateUnix, timeline: JSONNull?
     let crew: [JSONAny]?
     let lastDateUpdate: String?
     let lastLlLaunchDate, lastLlUpdate: String?
@@ -42,14 +37,9 @@ struct LaunchDTO: Codable {
         case isTentative = "is_tentative"
         case tentativeMaxPrecision = "tentative_max_precision"
         case tbd
-        case launchWindow = "launch_window"
-        case rocket, ships, telemetry
-        case launchSite = "launch_site"
-        case launchSuccess = "launch_success"
+        case rocket, ships
         case links, details, upcoming
-        case staticFireDateUTC = "static_fire_date_utc"
-        case staticFireDateUnix = "static_fire_date_unix"
-        case timeline, crew
+        case crew
         case lastDateUpdate = "last_date_update"
         case lastLlLaunchDate = "last_ll_launch_date"
         case lastLlUpdate = "last_ll_update"
@@ -60,66 +50,25 @@ struct LaunchDTO: Codable {
     }
 }
 
-// MARK: - LaunchSite
-struct LaunchSite: Codable {
-    let siteID: SiteID
-    let siteName: SiteName
-    let siteNameLong: SiteNameLong
-
-    enum CodingKeys: String, CodingKey {
-        case siteID = "site_id"
-        case siteName = "site_name"
-        case siteNameLong = "site_name_long"
-    }
-}
-
-enum SiteID: String, Codable {
-    case ccafsSlc40 = "ccafs_slc_40"
-    case kscLc39A = "ksc_lc_39a"
-}
-
-enum SiteName: String, Codable {
-    case ccafsSlc40 = "CCAFS SLC 40"
-    case kscLc39A = "KSC LC 39A"
-}
-
-enum SiteNameLong: String, Codable {
-    case capeCanaveralAirForceStationSpaceLaunchComplex40 = "Cape Canaveral Air Force Station Space Launch Complex 40"
-    case kennedySpaceCenterHistoricLaunchComplex39A = "Kennedy Space Center Historic Launch Complex 39A"
-}
-
 // MARK: - Links
 struct Links: Codable {
     let missionPatch, missionPatchSmall: String?
     let redditCampaign: String?
-    let redditLaunch, redditRecovery, redditMedia, presskit: JSONNull?
-    let articleLink, wikipedia, videoLink, youtubeID: JSONNull?
     let flickrImages: [JSONAny]
 
     enum CodingKeys: String, CodingKey {
         case missionPatch = "mission_patch"
         case missionPatchSmall = "mission_patch_small"
         case redditCampaign = "reddit_campaign"
-        case redditLaunch = "reddit_launch"
-        case redditRecovery = "reddit_recovery"
-        case redditMedia = "reddit_media"
-        case presskit
-        case articleLink = "article_link"
-        case wikipedia
-        case videoLink = "video_link"
-        case youtubeID = "youtube_id"
         case flickrImages = "flickr_images"
     }
 }
 
 // MARK: - Rocket
 struct Rocket: Codable {
-    let rocketID: RocketID
-    let rocketName: RocketName
-    let rocketType: RocketType
+    let rocketID, rocketName, rocketType: String
     let firstStage: FirstStage
     let secondStage: SecondStage
-    let fairings: Fairings?
 
     enum CodingKeys: String, CodingKey {
         case rocketID = "rocket_id"
@@ -127,18 +76,6 @@ struct Rocket: Codable {
         case rocketType = "rocket_type"
         case firstStage = "first_stage"
         case secondStage = "second_stage"
-        case fairings
-    }
-}
-
-// MARK: - Fairings
-struct Fairings: Codable {
-    let reused, recoveryAttempt, recovered, ship: JSONNull?
-
-    enum CodingKeys: String, CodingKey {
-        case reused
-        case recoveryAttempt = "recovery_attempt"
-        case recovered, ship
     }
 }
 
@@ -149,33 +86,20 @@ struct FirstStage: Codable {
 
 // MARK: - Core
 struct Core: Codable {
-    let coreSerial, flight: JSONNull?
+    let coreSerial: String?
+    let flight: Int?
     let block: Int?
     let gridfins, legs, reused: Bool?
-    let landSuccess: JSONNull?
     let landingIntent: Bool?
     let landingType, landingVehicle: String?
 
     enum CodingKeys: String, CodingKey {
         case coreSerial = "core_serial"
         case flight, block, gridfins, legs, reused
-        case landSuccess = "land_success"
         case landingIntent = "landing_intent"
         case landingType = "landing_type"
         case landingVehicle = "landing_vehicle"
     }
-}
-
-enum RocketID: String, Codable {
-    case falcon9 = "falcon9"
-}
-
-enum RocketName: String, Codable {
-    case falcon9 = "Falcon 9"
-}
-
-enum RocketType: String, Codable {
-    case ft = "FT"
 }
 
 // MARK: - SecondStage
@@ -191,13 +115,11 @@ struct Payload: Codable {
     let reused: Bool
     let customers: [String]
     let nationality, manufacturer: String?
-    let payloadType: PayloadType
+    let payloadType: String
     let payloadMassKg: Int?
     let payloadMassLbs: Double?
     let orbit: String
     let orbitParams: OrbitParams
-    let capSerial, massReturnedKg, massReturnedLbs, flightTimeSEC: JSONNull?
-    let cargoManifest: JSONNull?
 
     enum CodingKeys: String, CodingKey {
         case payloadID = "payload_id"
@@ -208,90 +130,24 @@ struct Payload: Codable {
         case payloadMassLbs = "payload_mass_lbs"
         case orbit
         case orbitParams = "orbit_params"
-        case capSerial = "cap_serial"
-        case massReturnedKg = "mass_returned_kg"
-        case massReturnedLbs = "mass_returned_lbs"
-        case flightTimeSEC = "flight_time_sec"
-        case cargoManifest = "cargo_manifest"
     }
 }
 
 // MARK: - OrbitParams
 struct OrbitParams: Codable {
-    let referenceSystem: ReferenceSystem?
-    let regime: String?
-    let longitude, semiMajorAxisKM, eccentricity, periapsisKM: JSONNull?
-    let apoapsisKM, inclinationDeg, periodMin: JSONNull?
+    let referenceSystem, regime: String?
     let lifespanYears: Int?
-    let epoch, meanMotion, raan, argOfPericenter: JSONNull?
-    let meanAnomaly: JSONNull?
 
     enum CodingKeys: String, CodingKey {
         case referenceSystem = "reference_system"
-        case regime, longitude
-        case semiMajorAxisKM = "semi_major_axis_km"
-        case eccentricity
-        case periapsisKM = "periapsis_km"
-        case apoapsisKM = "apoapsis_km"
-        case inclinationDeg = "inclination_deg"
-        case periodMin = "period_min"
+        case regime
         case lifespanYears = "lifespan_years"
-        case epoch
-        case meanMotion = "mean_motion"
-        case raan
-        case argOfPericenter = "arg_of_pericenter"
-        case meanAnomaly = "mean_anomaly"
-    }
-}
-
-enum ReferenceSystem: String, Codable {
-    case geocentric = "geocentric"
-}
-
-enum PayloadType: String, Codable {
-    case crewDragon = "Crew Dragon"
-    case dragon11 = "Dragon 1.1"
-    case satellite = "Satellite"
-}
-
-// MARK: - Telemetry
-struct Telemetry: Codable {
-    let flightClub: JSONNull?
-
-    enum CodingKeys: String, CodingKey {
-        case flightClub = "flight_club"
     }
 }
 
 typealias LaunchDTOS = [LaunchDTO]
 
 // MARK: - Encode/decode helpers
-
-class JSONNull: Codable, Hashable {
-
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
-        return true
-    }
-
-    public var hashValue: Int {
-        return 0
-    }
-
-    public init() {}
-
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
-        }
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
-    }
-}
-
 class JSONCodingKey: CodingKey {
     let key: String
 
@@ -339,9 +195,6 @@ class JSONAny: Codable {
         if let value = try? container.decode(String.self) {
             return value
         }
-        if container.decodeNil() {
-            return JSONNull()
-        }
         throw decodingError(forCodingPath: container.codingPath)
     }
 
@@ -357,11 +210,6 @@ class JSONAny: Codable {
         }
         if let value = try? container.decode(String.self) {
             return value
-        }
-        if let value = try? container.decodeNil() {
-            if value {
-                return JSONNull()
-            }
         }
         if var container = try? container.nestedUnkeyedContainer() {
             return try decodeArray(from: &container)
@@ -384,11 +232,6 @@ class JSONAny: Codable {
         }
         if let value = try? container.decode(String.self, forKey: key) {
             return value
-        }
-        if let value = try? container.decodeNil(forKey: key) {
-            if value {
-                return JSONNull()
-            }
         }
         if var container = try? container.nestedUnkeyedContainer(forKey: key) {
             return try decodeArray(from: &container)
@@ -427,8 +270,6 @@ class JSONAny: Codable {
                 try container.encode(value)
             } else if let value = value as? String {
                 try container.encode(value)
-            } else if value is JSONNull {
-                try container.encodeNil()
             } else if let value = value as? [Any] {
                 var container = container.nestedUnkeyedContainer()
                 try encode(to: &container, array: value)
@@ -452,8 +293,6 @@ class JSONAny: Codable {
                 try container.encode(value, forKey: key)
             } else if let value = value as? String {
                 try container.encode(value, forKey: key)
-            } else if value is JSONNull {
-                try container.encodeNil(forKey: key)
             } else if let value = value as? [Any] {
                 var container = container.nestedUnkeyedContainer(forKey: key)
                 try encode(to: &container, array: value)
@@ -475,8 +314,6 @@ class JSONAny: Codable {
             try container.encode(value)
         } else if let value = value as? String {
             try container.encode(value)
-        } else if value is JSONNull {
-            try container.encodeNil()
         } else {
             throw encodingError(forValue: value, codingPath: container.codingPath)
         }

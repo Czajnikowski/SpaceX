@@ -14,7 +14,7 @@ extension LaunchCellState {
             missionName: launchDTO.missionName,
             missionTime: launchDTO.launchDateUTC,
             missionID: launchDTO.missionID.joined(separator: ","),
-            rocketName: launchDTO.rocket.rocketName.rawValue,
+            rocketName: launchDTO.rocket.rocketName,
             hasReusedPieces: launchDTO.hasReusedPieces
         )
     }

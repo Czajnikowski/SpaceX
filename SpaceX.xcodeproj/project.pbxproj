@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AE0E66A2248D57B80062CD7D /* LaunchDTO+ReusedStatusProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0E66A1248D57B80062CD7D /* LaunchDTO+ReusedStatusProviding.swift */; };
-		AE0E66A9248D58900062CD7D /* Collection+safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0E66A8248D58900062CD7D /* Collection+safe.swift */; };
 		AE0E66AB248D59960062CD7D /* ViewState+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0E66AA248D59960062CD7D /* ViewState+DTO.swift */; };
 		AE0E66AF248D5CB20062CD7D /* LaunchesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0E66AE248D5CB20062CD7D /* LaunchesPresenter.swift */; };
 		AE0E66D6248D5DB40062CD7D /* View.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0E66D5248D5DB40062CD7D /* View.framework */; };
@@ -38,7 +37,6 @@
 
 /* Begin PBXFileReference section */
 		AE0E66A1248D57B80062CD7D /* LaunchDTO+ReusedStatusProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaunchDTO+ReusedStatusProviding.swift"; sourceTree = "<group>"; };
-		AE0E66A8248D58900062CD7D /* Collection+safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Collection+safe.swift"; path = "../View/View/Collection+safe.swift"; sourceTree = "<group>"; };
 		AE0E66AA248D59960062CD7D /* ViewState+DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewState+DTO.swift"; sourceTree = "<group>"; };
 		AE0E66AE248D5CB20062CD7D /* LaunchesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesPresenter.swift; sourceTree = "<group>"; };
 		AE0E66D5248D5DB40062CD7D /* View.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = View.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,8 +74,6 @@
 		AE0E66DA248D5EA20062CD7D /* Launches */ = {
 			isa = PBXGroup;
 			children = (
-				AE5876F2248D1BCA000FEB56 /* LaunchDTOs.swift */,
-				AE0E66A1248D57B80062CD7D /* LaunchDTO+ReusedStatusProviding.swift */,
 				AE0E66AE248D5CB20062CD7D /* LaunchesPresenter.swift */,
 			);
 			path = Launches;
@@ -103,17 +99,66 @@
 		AE543B8F248D160300732BC8 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				AEFBCB3C24B836CF00EDBB7E /* App */,
+				AEFBCB3F24B8371200EDBB7E /* DTO */,
+				AEFBCB3B24B836C300EDBB7E /* Extensions */,
 				AE0E66DA248D5EA20062CD7D /* Launches */,
-				AEFB2820248E1604009C4A73 /* AlamofireProvider.swift */,
-				AE4932A0248E06140010020F /* AppCoordinator.swift */,
-				AE543B90248D160300732BC8 /* AppDelegate.swift */,
-				AE543B96248D160500732BC8 /* Assets.xcassets */,
-				AE0E66A8248D58900062CD7D /* Collection+safe.swift */,
-				AE543B9E248D160500732BC8 /* Info.plist */,
-				AE543B92248D160300732BC8 /* SceneDelegate.swift */,
-				AE0E66AA248D59960062CD7D /* ViewState+DTO.swift */,
+				AEFBCB3D24B836DF00EDBB7E /* Resources */,
+				AEFBCB4024B8372400EDBB7E /* Services */,
+				AEFBCB3E24B836EB00EDBB7E /* Supporting */,
 			);
 			path = SpaceX;
+			sourceTree = "<group>";
+		};
+		AEFBCB3B24B836C300EDBB7E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE0E66A1248D57B80062CD7D /* LaunchDTO+ReusedStatusProviding.swift */,
+				AE0E66AA248D59960062CD7D /* ViewState+DTO.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AEFBCB3C24B836CF00EDBB7E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AE4932A0248E06140010020F /* AppCoordinator.swift */,
+				AE543B90248D160300732BC8 /* AppDelegate.swift */,
+				AE543B92248D160300732BC8 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AEFBCB3D24B836DF00EDBB7E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE543B96248D160500732BC8 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AEFBCB3E24B836EB00EDBB7E /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				AE543B9E248D160500732BC8 /* Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		AEFBCB3F24B8371200EDBB7E /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				AE5876F2248D1BCA000FEB56 /* LaunchDTOs.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		AEFBCB4024B8372400EDBB7E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AEFB2820248E1604009C4A73 /* AlamofireProvider.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,7 +241,6 @@
 				AE543B91248D160300732BC8 /* AppDelegate.swift in Sources */,
 				AE5876F3248D1BCA000FEB56 /* LaunchDTOs.swift in Sources */,
 				AE0E66A2248D57B80062CD7D /* LaunchDTO+ReusedStatusProviding.swift in Sources */,
-				AE0E66A9248D58900062CD7D /* Collection+safe.swift in Sources */,
 				AE4932A1248E06140010020F /* AppCoordinator.swift in Sources */,
 				AE543B93248D160300732BC8 /* SceneDelegate.swift in Sources */,
 				AE0E66AF248D5CB20062CD7D /* LaunchesPresenter.swift in Sources */,
@@ -328,7 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QPFFKMSR5R;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SpaceX/Info.plist;
+				INFOPLIST_FILE = SpaceX/Supporting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,7 +391,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QPFFKMSR5R;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SpaceX/Info.plist;
+				INFOPLIST_FILE = SpaceX/Supporting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

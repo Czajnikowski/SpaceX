@@ -16,16 +16,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AEFB280A248E1236009C4A73 /* PBXContainerItemProxy */ = {
+		AE0053C524A3C01A00BACD57 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AEFB2806248E1236009C4A73 /* View.xcodeproj */;
+			containerPortal = AE0053C124A3C01A00BACD57 /* View.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = AE0E66BA248D5D2A0062CD7D;
 			remoteInfo = View;
 		};
-		AEFB280C248E1239009C4A73 /* PBXContainerItemProxy */ = {
+		AE0053C724A3C02000BACD57 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AEFB2806248E1236009C4A73 /* View.xcodeproj */;
+			containerPortal = AE0053C124A3C01A00BACD57 /* View.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = AE0E66B9248D5D2A0062CD7D;
 			remoteInfo = View;
@@ -40,13 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE0053C124A3C01A00BACD57 /* View.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = View.xcodeproj; path = ../../View/View.xcodeproj; sourceTree = "<group>"; };
 		AE4932AC248E073E0010020F /* ViewMocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewMocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4932AF248E073E0010020F /* ViewMocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewMocks.h; sourceTree = "<group>"; };
 		AE4932B0248E073E0010020F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE4932B9248E077E0010020F /* Launches.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Launches.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AE4932BA248E079A0010020F /* LaunchesPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesPresenterMock.swift; sourceTree = "<group>"; };
 		AE4932BC248E07AE0010020F /* ViewBuilders+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewBuilders+Mock.swift"; sourceTree = "<group>"; };
-		AEFB2806248E1236009C4A73 /* View.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = View.xcodeproj; path = ../View/View.xcodeproj; sourceTree = "<group>"; };
 		AEFB2812248E13A3009C4A73 /* ViewMocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewMocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEFB2814248E13A3009C4A73 /* LaunchesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesTests.swift; sourceTree = "<group>"; };
 		AEFB2816248E13A3009C4A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,10 +72,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE0053C024A3BFF600BACD57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE0053C124A3C01A00BACD57 /* View.xcodeproj */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE0053C224A3C01A00BACD57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE0053C624A3C01A00BACD57 /* View.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AE4932A2248E073E0010020F = {
 			isa = PBXGroup;
 			children = (
-				AEFB2806248E1236009C4A73 /* View.xcodeproj */,
+				AE0053C024A3BFF600BACD57 /* Frameworks */,
 				AE4932AE248E073E0010020F /* ViewMocks */,
 				AEFB2813248E13A3009C4A73 /* ViewMocksTests */,
 				AE4932AD248E073E0010020F /* Products */,
@@ -94,10 +110,9 @@
 		AE4932AE248E073E0010020F /* ViewMocks */ = {
 			isa = PBXGroup;
 			children = (
+				AEFBCB4524B8387B00EDBB7E /* Extensions */,
 				AE4932B7248E07570010020F /* Launches */,
-				AE4932AF248E073E0010020F /* ViewMocks.h */,
-				AE4932B0248E073E0010020F /* Info.plist */,
-				AE4932BC248E07AE0010020F /* ViewBuilders+Mock.swift */,
+				AEFBCB4424B8387200EDBB7E /* Supporting */,
 			);
 			path = ViewMocks;
 			sourceTree = "<group>";
@@ -111,14 +126,6 @@
 			path = Launches;
 			sourceTree = "<group>";
 		};
-		AEFB2807248E1236009C4A73 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AEFB280B248E1236009C4A73 /* View.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		AEFB2813248E13A3009C4A73 /* ViewMocksTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +133,23 @@
 				AEFB2816248E13A3009C4A73 /* Info.plist */,
 			);
 			path = ViewMocksTests;
+			sourceTree = "<group>";
+		};
+		AEFBCB4424B8387200EDBB7E /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				AE4932B0248E073E0010020F /* Info.plist */,
+				AE4932AF248E073E0010020F /* ViewMocks.h */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		AEFBCB4524B8387B00EDBB7E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE4932BC248E07AE0010020F /* ViewBuilders+Mock.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +178,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				AEFB280D248E1239009C4A73 /* PBXTargetDependency */,
+				AE0053C824A3C02000BACD57 /* PBXTargetDependency */,
 			);
 			name = ViewMocks;
 			productName = ViewMocks;
@@ -217,8 +241,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = AEFB2807248E1236009C4A73 /* Products */;
-					ProjectRef = AEFB2806248E1236009C4A73 /* View.xcodeproj */;
+					ProductGroup = AE0053C224A3C01A00BACD57 /* Products */;
+					ProjectRef = AE0053C124A3C01A00BACD57 /* View.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -230,11 +254,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		AEFB280B248E1236009C4A73 /* View.framework */ = {
+		AE0053C624A3C01A00BACD57 /* View.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = View.framework;
-			remoteRef = AEFB280A248E1236009C4A73 /* PBXContainerItemProxy */;
+			remoteRef = AE0053C524A3C01A00BACD57 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -277,10 +301,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AEFB280D248E1239009C4A73 /* PBXTargetDependency */ = {
+		AE0053C824A3C02000BACD57 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = View;
-			targetProxy = AEFB280C248E1239009C4A73 /* PBXContainerItemProxy */;
+			targetProxy = AE0053C724A3C02000BACD57 /* PBXContainerItemProxy */;
 		};
 		AEFB2819248E13A3009C4A73 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -420,7 +444,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ViewMocks/Info.plist;
+				INFOPLIST_FILE = ViewMocks/Supporting/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,7 +470,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ViewMocks/Info.plist;
+				INFOPLIST_FILE = ViewMocks/Supporting/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
